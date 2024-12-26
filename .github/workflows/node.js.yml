@@ -61,4 +61,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: RUN TESTS
-        run: npm start
+        run: |
+          npm start &
+          sleep 3s
+          curl localhost:3000
+          
