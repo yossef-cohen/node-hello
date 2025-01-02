@@ -19,11 +19,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-    - name: Print-Use Secret
-      env:
-        super: ${{ secrets.MYSECRET }}
-      run: |
-        echo "hello we want to see the super secret: ${super}"
-        echo "hello we demand to see the github secret: ${{ secrets.MYSECRET }}"
-        echo "Hello - we want to use DB Secretfor PROD/DEV ${{ secrets.DB }}"
-        echo "hello we want to print the variable of: ${{ vars.ENV }}"
+    - name: docker login
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
