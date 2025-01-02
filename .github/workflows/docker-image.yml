@@ -13,7 +13,6 @@ jobs:
 
   build:
     environment: prod
-
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +23,6 @@ jobs:
       env:
         super: ${{ secrets.MYSECRET }}
       run: |
-        echo "hello this is my secrete: ${super}"
-        echo "hello this is my secrete: ${{ secrets.MYSECRET }}"
-        echo hello ${{ secrets.DB }}"
-        
+        echo "hello we want to see the super secret: ${super}"
+        echo "hello we demand to see the github secret: ${{ secrets.MYSECRET }}"
+        echo "Hello - we want to use DB Secretfor PROD/DEV ${{ secrets.DB }}"
