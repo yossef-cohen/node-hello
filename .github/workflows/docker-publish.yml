@@ -12,7 +12,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # dockerhub.repository as <account>/<repo>
-  IMAGE_NAME: kokatim/azrieli-demo
+  IMAGE_NAME: lidorlg/azrieli-demo
 
 
 jobs:
@@ -56,6 +56,3 @@ jobs:
           context: .
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ github.run_number }}-latest
-
-
- 
