@@ -23,5 +23,5 @@ jobs:
       env:
         super: ${{ secrets.MYSECRET }}
       run: |
-        echo "fuck off"
         echo "hello this is my secrete: ${super}"
+        echo "hello this is my secrete: ${secrets.MYSECRET}"
