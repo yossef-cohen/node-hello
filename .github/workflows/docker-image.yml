@@ -12,6 +12,7 @@ on:
 jobs:
 
   build:
+    environment: prod
 
     runs-on: ubuntu-latest
 
@@ -24,4 +25,6 @@ jobs:
         super: ${{ secrets.MYSECRET }}
       run: |
         echo "hello this is my secrete: ${super}"
-        echo "hello this is my secrete: ${secrets.MYSECRET}"
+        echo "hello this is my secrete: ${{ secrets.MYSECRET }}"
+        echo hello ${{ secrets.DB }}"
+        
